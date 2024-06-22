@@ -1,0 +1,347 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Header styling */
+header {
+  width: 100%;
+  position: fixed;
+  top: 10px;
+  z-index: 1000;
+}
+
+nav {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: rgba(90, 20, 40, 0.8);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero section styling */
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#hero {
+  height: calc(100dvh);
+  color: #fff;
+  text-align: center;
+  background: url("../images/hero_bg.jpg") no-repeat center center/cover fixed;
+  padding: 5rem 0;
+  position: relative;
+}
+
+#hero .hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#hero .hero-container h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease;
+}
+
+#hero .hero-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  animation: slideInLeft 1.5s ease;
+}
+
+#hero .hero-container button {
+  padding: 0.7rem 1.5rem;
+  background: #f90;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#hero .hero-container button:hover {
+  background: #ff0;
+}
+
+/* About section styling */
+#about {
+  padding: 2rem 1rem;
+  background: #f4f4f4;
+  text-align: center;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about h2 {
+  margin-bottom: 3rem;
+  padding: 0 5rem;
+}
+
+#about h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: black;
+  margin: 1rem auto;
+}
+
+#about .about-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+#about .about-container .content {
+  max-width: 50%;
+}
+
+#about .about-container .image img {
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+#about .about-container .content h3 {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+  position: relative;
+}
+
+#about .about-container .content h3::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #777;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  font-size: 2rem;
+}
+
+#about .about-container .content h3::after {
+  content: "?";
+  position: absolute;
+  top: 0;
+  right: -25px;
+  font-size: 2rem;
+  color: red;
+}
+
+#about .about-container .content p {
+  line-height: 1.8;
+  color: #777;
+}
+
+/* Services section styling */
+#services {
+  padding: 2rem 1rem;
+  text-align: center;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#services h2 {
+  margin-bottom: 1rem;
+}
+#services h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: black;
+  margin: 1rem auto;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  min-height: 350px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-box h3 {
+  margin-bottom: 0.5em;
+}
+
+/* Footer styling */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive media queries */
+
+@media (max-width: 1024px) {
+  #about .about-container .content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  #about .about-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  #about .about-container .content {
+    max-width: 100%;
+  }
+  #about .about-container .content p {
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  #hero .hero-container h1 {
+    font-size: 2rem;
+  }
+
+  #hero .hero-container p {
+    font-size: 1rem;
+  }
+
+  #services h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-box {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+
+  #hero .hero-container h1 {
+    font-size: 1.5rem;
+  }
+
+  #hero .hero-container p {
+    font-size: 0.8rem;
+  }
+
+  #services h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-1000%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
