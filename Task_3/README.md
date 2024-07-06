@@ -30,6 +30,3 @@ You can try out the calculator [here](https://calculator-five-virid.vercel.app/)
     ```
 3. Open `index.html` in your web browser.
 
-## License
-
-This project is licensed under the MIT License.
